@@ -104,6 +104,6 @@ location /api/ {
 React static files served from /usr/share/nginx/html
 
 📸 Screenshot 
-![Screenshot](./Screenshot (128).png)
-![Screenshot](./Screenshot (129).png)
-![Screenshot (128)](./Screenshot (130).png)
+![Screenshot 1](./images/Screenshot-1.png)
+![Screenshot 2](./images/Screenshot-2.png)
+![Screenshot 3](./images/Screenshot-3.png)
