@@ -8,6 +8,7 @@ This project demonstrates a **complete deployment pipeline** of a MERN stack app
 
 ## 📁 Project Structure
 
+```bash
 Dynamic-webHosting-EC2/
 ├── README.md
 ├── images/
@@ -16,6 +17,8 @@ Dynamic-webHosting-EC2/
 │   └── Screenshot-3.png
 ├── web-hosting-ec2/ #Frontend
 └── web-hosting-ec2-backend/ #Backend
+
+``` 
 
 ## 🛠️ Tech Stack
 
