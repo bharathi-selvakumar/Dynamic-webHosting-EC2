@@ -109,6 +109,7 @@ location /api/ {
 }
 📁 React static files are served from:
 
+```
 ## 📸 Screenshots
 ![Screenshot 1](./images/Screenshot-1.png)  
 ![Screenshot 2](./images/Screenshot-2.png)  
