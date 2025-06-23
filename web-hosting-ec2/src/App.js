@@ -14,7 +14,7 @@ import {
 import { styled } from '@mui/material/styles';
 import axios from 'axios';
 
-const BACKEND_URL = 'http://YOUR_EC2_PUBLIC_IP:5000'; // Replace this with your actual EC2 IP
+const BACKEND_URL = 'http://127.0.0.1:5000'; //replace with ec2 public ip
 
 const StyledBox = styled(Box)(({ theme }) => ({
   fontFamily: `'VT323', monospace`,
