@@ -3,13 +3,6 @@
 
 This is a full-stack web application where users can upload images or files through a React frontend. The uploaded files are securely stored in an AWS S3 bucket via an Express backend API. The entire project is deployed on a single EC2 instance with **Nginx** handling reverse proxy and **PM2** ensuring backend reliability.
 
-## 🔗 Live Link
-
-🌐 [http://YOUR_EC2_PUBLIC_IP](http://YOUR_EC2_PUBLIC_IP)
-
-> Replace `YOUR_EC2_PUBLIC_IP` with your actual EC2 IP address.
-
----
 
 ## 📂 Project Structure
 
@@ -17,11 +10,6 @@ Dynamic-webHosting-EC2/
 ├── web-hosting-ec2-frontend/ # React frontend
 └── web-hosting-ec2-backend/ # Express backend
 
-yaml
-Copy
-Edit
-
----
 
 ## 🛠️ Technologies Used
 
@@ -116,3 +104,4 @@ location /api/ {
 React static files served from /usr/share/nginx/html
 
 📸 Screenshot / Thumbnail
+
