@@ -1,17 +1,19 @@
-# Dynamic-webHosting-EC2
-🚀 MERN Stack File Upload Web App Deployed on AWS EC2
+# 🌐 Dynamic Web Hosting on EC2
 
-This is a full-stack web application where users can upload images or files through a React frontend. The uploaded files are securely stored in an AWS S3 bucket via an Express backend API. The entire project is deployed on a single EC2 instance with **Nginx** handling reverse proxy and **PM2** ensuring backend reliability.
+🚀 A Full-Stack MERN File Upload App Deployed on AWS EC2
 
+This project demonstrates a **complete deployment pipeline** of a MERN stack application where users can upload images/files using a React frontend. These files are stored in an **AWS S3 bucket** using an Express backend. Everything is hosted on a **single EC2 instance**, with **Nginx** acting as a reverse proxy and **PM2** keeping the backend alive.
 
-## 📂 Project Structure
+---
+
+## 📁 Project Structure
 
 Dynamic-webHosting-EC2/
 ├── web-hosting-ec2-frontend/ # React frontend
 └── web-hosting-ec2-backend/ # Express backend
 
 
-## 🛠️ Technologies Used
+## 🛠️ Tech Stack
 
 ### 🔹 Frontend
 - React
@@ -22,77 +24,74 @@ Dynamic-webHosting-EC2/
 - Node.js
 - Express.js
 - Multer
-- AWS SDK (IAM Role-based access to S3)
+- AWS SDK (IAM Role-based, no access keys)
 
-### 🔹 Cloud & DevOps
+### 🔹 DevOps & Cloud
 - Amazon EC2 (Amazon Linux)
 - Amazon S3
-- Nginx
-- PM2
-- IAM Roles (No access keys used)
+- Nginx (Reverse Proxy)
+- PM2 (Node process manager)
+- IAM Roles (for secure AWS access)
 - Git & GitHub
 
 ---
 
 ## ✨ Features
 
-- 📤 Upload files/images to AWS S3
-- 🌐 View uploaded files in a responsive gallery
-- 🔒 Secure backend access using IAM Role (no credentials exposed)
-- 🔁 Reverse proxy with Nginx for routing frontend & backend APIs
-- 🟢 Persistent backend using PM2
-- 🎯 REST API architecture
+✅ Upload files or images from the frontend  
+✅ Store uploaded files directly into S3  
+✅ View uploaded files in a responsive gallery  
+✅ Backend secured using IAM Role  
+✅ Deployed with Nginx + PM2 on a single EC2 instance  
+✅ RESTful API architecture
 
 ---
 
 ## 🧑‍💻 Local Development
 
-### 📦 Frontend
-
+### ▶️ Start Frontend
 ```bash
 cd web-hosting-ec2-frontend
 npm install
 npm start
-Runs React app at http://localhost:3000
+# Runs at http://localhost:3000
+▶️ Start Backend
 
-💻 Backend
-bash
-Copy
-Edit
 cd web-hosting-ec2-backend
 npm install
 node index.js
-Runs Express server at http://localhost:5000
-
-➕ .env file setup
+# Runs at http://localhost:5000
+📄 .env Configuration (Backend)
 env
-Copy
-Edit
-AWS_BUCKET_NAME=your-s3-bucket-name
-AWS_REGION=ap-south-1
-PORT=5000
-Access credentials are handled via IAM Role, not access keys.
 
-🚀 Deployment on EC2
-✅ Steps Followed:
-Create an EC2 Instance (Amazon Linux)
+✅ Access keys are not used. IAM Role handles all permissions.
+
+🚀 Deployment Steps on EC2
+Launch EC2 instance (Amazon Linux)
 
 Attach IAM Role with AmazonS3FullAccess
 
-Clone the Repo
+Clone this GitHub repo
 
-Install required tools: Node.js, PM2, Nginx
+Install dependencies:
 
-Build frontend and configure Nginx
+sudo yum install nginx git nodejs npm -y
+sudo npm install pm2 -g
+Build frontend:
 
-Start backend with PM2
+cd web-hosting-ec2-frontend
+npm run build
+sudo cp -r build/* /usr/share/nginx/html/
+Run backend with PM2:
 
+
+cd ../web-hosting-ec2-backend
+pm2 start index.js --name backend
 Configure Nginx reverse proxy
 
 🔁 Nginx Configuration
 nginx
-Copy
-Edit
+
 location /api/ {
     proxy_pass http://localhost:5000/;
     proxy_http_version 1.1;
@@ -101,9 +100,9 @@ location /api/ {
     proxy_set_header Host $host;
     proxy_cache_bypass $http_upgrade;
 }
-React static files served from /usr/share/nginx/html
+📁 React static files are served from:
 
-## 📸 Screenshot 
-![Screenshot 1](./images/Screenshot-1.png)
-![Screenshot 2](./images/Screenshot-2.png)
+## 📸 Screenshots
+![Screenshot 1](./images/Screenshot-1.png)  
+![Screenshot 2](./images/Screenshot-2.png)  
 ![Screenshot 3](./images/Screenshot-3.png)
